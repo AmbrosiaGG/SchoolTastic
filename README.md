@@ -33,6 +33,44 @@ Can work on local infrastructure to limit internet access during examinations!
 * Customizability
 * Built in plagiarism checker
 
+# ☁️ Install
+
+## 🤖 Normal
+```bash 
+ git clone https://github.com/AmbrosiaGG/SchoolTastic
+ mv .env.template .env
+ echo "Write info to .ENV"
+ sleep 2
+ nano .env
+ echo "Install Bun"
+ curl -fsSl https://bun.sh/install | bash > /dev/null
+```
+
+Run bash
+```bash
+ bash
+ bun i
+```
+
+Test Bun
+```bash
+ bun .
+ # Run SchoolTastic
+ pm2 start --interpreter ~/.bun/bin/bun index.js --name "SchoolTastic" -- -color
+```
+
+## 🐋 Docker
+```bash 
+ export sessionsecretambrosia=uuidgen | tr -d '-'
+ docker run -d duckeydevv/ambrosia-schooltastic \
+ --env atlas= \
+ --env session=$(sessionsecretambrosia) \
+ --env port=3000 \
+ --env updates=false \
+ --env title=< Your School > \
+ --name AmbrosiaSchoolTastic
+```
+
 # Schools Powered By SchoolTastic
 * None :(
 
