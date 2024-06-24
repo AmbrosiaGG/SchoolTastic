@@ -37,11 +37,11 @@ Can work on local infrastructure to limit internet access during examinations!
 
 ## 🤖 Quick Setup (Recommended)
 ```bash
-wget -qO- https://raw.githubusercontent.com/AmbrosiaGG/SchoolTastic/main/script/setup.sh | sudo bash
+bash <(wget -qO- https://raw.githubusercontent.com/AmbrosiaGG/SchoolTastic/main/script/setup.sh)
 ```
 or
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AmbrosiaGG/SchoolTastic/main/script/setup.sh | sudo bash
+bash <(curl -fsSL https://raw.githubusercontent.com/AmbrosiaGG/SchoolTastic/main/script/setup.sh)
 ```
 
 ## 🐋 Docker
