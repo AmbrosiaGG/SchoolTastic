@@ -1,0 +1,32 @@
+{
+  "name": "ambrosiacdn",
+  "version": "v2",
+  "module": "index.js",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "dev:css": "tailwindcss -i ./assets/global.css -o ./assets/tailwind.css --watch "
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@catppuccin/tailwindcss": "^0.1.6",
+    "@sentry/bun": "^8.9.1",
+    "apexcharts": "^3.49.1",
+    "body-parser": "^1.20.2",
+    "chalk": "^5.3.0",
+    "connect-mongo": "^5.1.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-fileupload": "^1.5.0",
+    "express-session": "^1.18.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.4.1",
+    "preline": "^2.3.0",
+    "tailwindcss": "^3.4.4"
+  }
+}

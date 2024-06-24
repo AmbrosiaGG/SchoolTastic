@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../components/header.ejs') %>
+  </head>
+
+  <body
+    class="mocha bg-ctp-base backdrop-filter bg-no-repeat scroll-smooth backdrop-blur-md transform-gpu"
+    id="bg"
+  >
+    <!-- ========== HEADER ========== -->
+    <header
+      class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-ctp-crust border-b border-ctp-surface1 text-sm py-2.5 sm:py-4"
+    >
+      <nav
+        class="max-w-7xl flex basis-full items-center w-full mx-auto px-4 sm:px-6 lg:px-8"
+        aria-label="Global"
+      >
+        <div class="me-5 md:me-8">
+          <a
+            class="flex-none text-xl font-semibold baloo mt-1 text-ctp-text truncate"
+            href="#"
+            aria-label="Brand"
+          >
+            <%= title %>
+          </a>
+        </div>
+
+        <div
+          class="w-full flex items-center justify-end ms-auto sm:justify-between sm:gap-x-3 sm:order-3"
+        >
+          <div class="sm:hidden">
+            <button
+              type="button"
+              class="inline-flex flex-shrink-0 justify-center items-center gap-2 size-[38px] rounded-full font-medium bg-white text-gray-700 align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white transition-all text-xs"
+            >
+              <svg
+                class="flex-shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="sm:block">
+            <label for="icon" class="sr-only">Search</label>
+            <div class="relative">
+              <div
+                class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4"
+              >
+                <svg
+                  class="flex-shrink-0 size-4 text-ctp-text"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+              </div>
+              <input
+                type="text"
+                id="icon"
+                name="icon"
+                class="py-2 pe-4 ps-10 block w-full border-ctp-surface2 rounded-lg text-sm bg-ctp-overlay0/25 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+                placeholder="Search"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-row items-center justify-end gap-2">
+            <button
+              type="button"
+              class="hs-dropdown-toggle w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full text-ctp-text/55 hover:bg-ctp-overlay0/25 disabled:opacity-50 disabled:pointer-events-none"
+            >
+              <svg
+                class="flex-shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="hs-dropdown-toggle w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full text-ctp-text/55 hover:bg-ctp-overlay0/25 disabled:opacity-50 disabled:pointer-events-none"
+              data-hs-offcanvas="#hs-offcanvas-right"
+            >
+              <svg
+                class="flex-shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+            </button>
+
+            <div
+              class="hs-dropdown relative inline-flex"
+              data-hs-dropdown-placement="bottom-right"
+            >
+              <button
+                id="hs-dropdown-with-header"
+                type="button"
+                class="hs-dropdown-toggle w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full text-ctp-text hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+              >
+                <img
+                  class="inline-block size-[38px] rounded-full ring-2 ring-ctp-surface1"
+                  src="https://cdn.discordapp.com/avatars/845312519001342052/ad209fd629974989e27ce2ac4f51a97f.png?size=2048"
+                  alt="Image Description"
+                />
+              </button>
+
+              <div
+                class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 z-10 bg-ctp-surface0/55 shadow-md rounded-lg p-2 filter backdrop-blur-md"
+                aria-labelledby="hs-dropdown-with-header"
+              >
+                <div class="py-3 px-5 -m-2 bg-ctp-surface1 rounded-t-lg">
+                  <p class="text-sm text-gray-300">Signed in as</p>
+                  <p class="text-sm font-medium text-ctp-text">
+                    <%= name %> | <%=role%>
+                  </p>
+                </div>
+                <div class="mt-2 py-2 first:pt-0 last:pb-0">
+                  <a
+                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-ctp-text/65 hover:bg-ctp-surface1 focus:ring-2 focus:ring-blue-500"
+                    href="#"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-cloud-upload"
+                    >
+                      <path
+                        d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"
+                      />
+                      <path d="M12 12v9" />
+                      <path d="m16 16-4-4-4 4" />
+                    </svg>
+                    Admin
+                  </a>
+                  <a
+                    class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-ctp-text/65 hover:bg-ctp-surface1 focus:ring-2 focus:ring-blue-500"
+                    href="#"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-settings"
+                    >
+                      <path
+                        d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+                      />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    Settings
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- ========== END HEADER ========== -->
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content">
+      <!-- Nav -->
+      <nav
+        class="sticky -top-px bg-ctp-mantle text-sm font-medium text-ctp-text ring-opacity-5 border-t shadow-sm border-ctp-surface1 pt-6 md:pb-6 -mt-px"
+        aria-label="Jump links"
+      >
+        <div
+          class="max-w-7xl snap-x w-full flex items-center overflow-x-auto px-4 sm:px-6 lg:px-8 pb-4 md:pb-0 mx-auto [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300"
+        >
+          <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
+            <a
+              class="inline-flex items-center gap-x-2 font-bold"
+              href="/dashboard"
+              >Dashboard</a
+            >
+          </div>
+          <% if (role=="admin") { %>
+          <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
+            <a class="inline-flex items-center gap-x-2" href="/drive"
+              >CloudStore</a
+            >
+          </div>
+          <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
+            <a class="inline-flex items-center gap-x-2" href="/teachers/exam"
+              >Examination</a
+            >
+          </div>
+
+          <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
+            <a class="inline-flex items-center gap-x-2" href="/teachers/ducky/tests"
+              >Tests</a
+            >
+          </div>
+
+          <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
+            <a class="inline-flex items-center gap-x-2" href="/teachers/ducky/marks"
+              >Marking</a
+            >
+          </div>
+
+          <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
+            <a class="inline-flex items-center gap-x-2" href="/class/ducky/members"
+              >Class Members</a
+            >
+          </div>
+
+          <% } else if (role="teacher") { %>
+          <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
+            <a class="inline-flex items-center gap-x-2" href="/teachers/exam"
+              >Examination</a
+            >
+          </div>
+
+          <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
+            <a class="inline-flex items-center gap-x-2" href="/teachers/tests"
+              >Tests</a
+            >
+          </div>
+
+          <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
+            <a class="inline-flex items-center gap-x-2" href="/students/marks"
+              >Marking</a
+            >
+          </div>
+
+          <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
+            <a class="inline-flex items-center gap-x-2" href="/class/members"
+              >Class Members</a
+            >
+          </div>
+          <% } else { %>
+            <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
+              <a class="inline-flex items-center gap-x-2" href="/students/marks"
+                >Marks</a
+              >
+            </div>  
+          <% } %>
+          <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last:pe-0">
+            <a
+              class="inline-flex items-center gap-x-2 hover:text-ctp-text/75 transition-all"
+              href="/docs"
+            >
+              Documentation
+              <span
+                class="inline bg-ctp-blue text-xs text-gray-700 font-semibold rounded-full py-1 px-2"
+                >v1</span
+              >
+            </a>
+          </div>
+        </div>
+      </nav>
+      <!-- End Nav -->
+
+      <div class="max-w-7xl min-h-[75rem] mx-auto py-10 px-4 sm:px-6 lg:px-8">
+        <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
+          <!-- Start ADMIN  -->
+          <% if (role == "admin") { %>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <!-- Card -->
+            <div
+              class="flex flex-col border shadow-sm rounded-xl bg-ctp-surface0 border-ctp-surface1"
+            >
+              <div class="p-4 md:p-5">
+                <div class="flex items-center gap-x-2">
+                  <p class="text-xs uppercase tracking-wide text-ctp-subtext0">
+                    Students
+                  </p>
+                  <div class="hs-tooltip">
+                    <div class="hs-tooltip-toggle">
+                      <svg
+                        class="flex-shrink-0 size-4 text-ctp-subtext1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <path d="M12 17h.01" />
+                      </svg>
+                      <span
+                        class="hide hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:show opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700"
+                        role="tooltip"
+                      >
+                        Number of Students
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-1 flex items-center gap-x-2">
+                  <h3 class="text-xl sm:text-2xl font-medium text-ctp-text">
+                    5
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+            <!-- Card -->
+            <div
+              class="flex flex-col border shadow-sm rounded-xl bg-ctp-surface0 border-ctp-surface1"
+            >
+              <div class="p-4 md:p-5">
+                <div class="flex items-center gap-x-2">
+                  <p class="text-xs uppercase tracking-wide text-ctp-subtext0">
+                    Teachers
+                  </p>
+                  <div class="hs-tooltip">
+                    <div class="hs-tooltip-toggle">
+                      <svg
+                        class="flex-shrink-0 size-4 text-ctp-subtext1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <path d="M12 17h.01" />
+                      </svg>
+                      <span
+                        class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700"
+                        role="tooltip"
+                      >
+                        The number of teachers
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-1 flex items-center gap-x-2">
+                  <h3 class="text-xl sm:text-2xl font-medium text-ctp-text">
+                    1
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- End Card -->
+            <!-- Card -->
+            <div
+              class="flex flex-col border shadow-sm rounded-xl bg-ctp-surface0 border-ctp-surface1"
+            >
+              <div class="p-4 md:p-5">
+                <div class="flex items-center gap-x-2">
+                  <p class="text-xs uppercase tracking-wide text-ctp-subtext0">
+                    Waitlist
+                  </p>
+                  <div class="hs-tooltip">
+                    <div class="hs-tooltip-toggle">
+                      <svg
+                        class="flex-shrink-0 size-4 text-ctp-subtext1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <path d="M12 17h.01" />
+                      </svg>
+                      <span
+                        class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700"
+                        role="tooltip"
+                      >
+                        People in the waitlist
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-1 flex items-center gap-x-2">
+                  <h3 class="text-xl sm:text-2xl font-medium text-ctp-text">
+                    50
+                  </h3>
+                  <span class="flex items-center gap-x-1 text-ctp-red"> </span>
+                </div>
+              </div>
+            </div>
+            <!-- End Card -->
+            <!-- Card -->
+            <div
+              class="flex flex-col border shadow-sm rounded-xl bg-ctp-surface0 border-ctp-surface1"
+            >
+              <div class="p-4 md:p-5">
+                <div class="flex items-center gap-x-2">
+                  <p class="text-xs uppercase tracking-wide text-ctp-subtext0">
+                    Data
+                  </p>
+                  <div class="hs-tooltip inline-block [--placement:right]'">
+                    <div class="hs-tooltip-toggle">
+                      <svg
+                        class="flex-shrink-0 size-4 text-ctp-subtext1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <path d="M12 17h.01" />
+                      </svg>
+                      <span
+                        class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700"
+                      >
+                        The number of file and images
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-1 flex items-center gap-x-2">
+                  <h3 class="text-xl sm:text-2xl font-medium text-ctp-text">
+                    10
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- End Card -->
+          </div>
+          <!-- End Grid -->
+
+          <div class="flex flex-col">
+            <div class="-m-1.5 overflow-x-auto">
+              <div class="p-1.5 min-w-full inline-block align-middle">
+                <div
+                  class="border rounded-lg divide-y bg-ctp-surface0 border-ctp-surface1 divide-ctp-surface1"
+                >
+                  <div class="py-3 px-4 flex items-center">
+                    <h1 class="font-calsans text-ctp-pink text-2xl mr-3 mt-1">
+                      Students
+                    </h1>
+
+                    <div class="relative max-w-xs">
+                      <label for="hs-table-search" class="sr-only"
+                        >Search</label
+                      >
+                      <input
+                        type="text"
+                        name="hs-table-search"
+                        id="hs-table-search"
+                        class="bg-ctp-surface1 py-2 px-3 ps-9 block w-full border-ctp-surface1 shadow-sm focus:border-ctp-pink focus:outline-none rounded-lg text-sm focus:z-10 focus:ring-ctp-pink disabled:opacity-50 disabled:pointer-events-none text-ctp-text"
+                        placeholder="Search for students"
+                      />
+                      <div
+                        class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-3"
+                      >
+                        <svg
+                          class="size-4 text-ctp-text"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <circle cx="11" cy="11" r="8"></circle>
+                          <path d="m21 21-4.3-4.3"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="overflow-hidden">
+                    <table class="min-w-full divide-y divide-ctp-surface1">
+                      <thead class="bg-ctp-surface0">
+                        <tr>
+                          <th scope="col" class="py-3 px-4 pe-0">
+                            <div class="flex items-center h-5">
+                              <input
+                                id="hs-table-search-checkbox-all"
+                                type="checkbox"
+                                class="border-ctp-surface1 rounded text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                              />
+                              <label
+                                for="hs-table-search-checkbox-all"
+                                class="sr-only"
+                                >Checkbox</label
+                              >
+                            </div>
+                          </th>
+                          <th
+                            scope="col"
+                            class="px-6 py-3 text-start text-xs font-medium text-ctp-pink uppercase"
+                          >
+                            Name
+                          </th>
+                          <th
+                            scope="col"
+                            class="px-6 py-3 text-start text-xs font-medium text-ctp-pink uppercase"
+                          >
+                            Grade
+                          </th>
+                          <th
+                            scope="col"
+                            class="px-6 py-3 text-start text-xs font-medium text-ctp-pink uppercase"
+                          >
+                            Age
+                          </th>
+                          <th
+                            scope="col"
+                            class="px-6 py-3 text-end text-xs font-medium text-ctp-pink uppercase"
+                          >
+                            Action
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody
+                        id="hs-table-body"
+                        class="divide-y divide-ctp-surface1"
+                      >
+                        <tr>
+                          <td class="py-3 ps-4">
+                            <div class="flex items-center h-5">
+                              <input
+                                id="hs-table-search-checkbox-1"
+                                type="checkbox"
+                                class="border-ctp-pink rounded text-ctp-text focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                              />
+                              <label
+                                for="hs-table-search-checkbox-1"
+                                class="sr-only"
+                                >Checkbox</label
+                              >
+                            </div>
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-ctp-text"
+                          >
+                            John Brown
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm text-ctp-text"
+                          >
+                            8
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm text-ctp-text"
+                          >
+                            14
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium"
+                          >
+                            <button
+                              type="button"
+                              class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-ctp-maroon hover:text-ctp-maroon/60 disabled:pointer-events-none"
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="py-3 ps-4">
+                            <div class="flex items-center h-5">
+                              <input
+                                id="hs-table-search-checkbox-2"
+                                type="checkbox"
+                                class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                              />
+                              <label
+                                for="hs-table-search-checkbox-2"
+                                class="sr-only"
+                                >Checkbox</label
+                              >
+                            </div>
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-ctp-text"
+                          >
+                            Jim Green
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm text-ctp-text"
+                          >
+                            10
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm text-ctp-text"
+                          >
+                            16
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium"
+                          >
+                            <button
+                              type="button"
+                              class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-ctp-maroon hover:text-ctp-maroon/60 disabled:pointer-events-none"
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="py-3 ps-4">
+                            <div class="flex items-center h-5">
+                              <input
+                                id="hs-table-search-checkbox-3"
+                                type="checkbox"
+                                class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                              />
+                              <label
+                                for="hs-table-search-checkbox-3"
+                                class="sr-only"
+                                >Checkbox</label
+                              >
+                            </div>
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-ctp-text"
+                          >
+                            Joe Black
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm text-ctp-text"
+                          >
+                            4
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm text-ctp-text"
+                          >
+                            9
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium"
+                          >
+                            <button
+                              type="button"
+                              class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-ctp-maroon hover:text-ctp-maroon/60 disabled:pointer-events-none"
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="py-3 ps-4">
+                            <div class="flex items-center h-5">
+                              <input
+                                id="hs-table-search-checkbox-4"
+                                type="checkbox"
+                                class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                              />
+                              <label
+                                for="hs-table-search-checkbox-4"
+                                class="sr-only"
+                                >Checkbox</label
+                              >
+                            </div>
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-ctp-text"
+                          >
+                            Edward King
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm text-ctp-text"
+                          >
+                            5
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm text-ctp-text"
+                          >
+                            11
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium"
+                          >
+                            <button
+                              type="button"
+                              class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-ctp-maroon hover:text-ctp-maroon/60 disabled:pointer-events-none"
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="py-3 ps-4">
+                            <div class="flex items-center h-5">
+                              <input
+                                id="hs-table-search-checkbox-5"
+                                type="checkbox"
+                                class="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                              />
+                              <label
+                                for="hs-table-search-checkbox-5"
+                                class="sr-only"
+                                >Checkbox</label
+                              >
+                            </div>
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-ctp-text"
+                          >
+                            Jim Red
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm text-ctp-text"
+                          >
+                            7
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm text-ctp-text"
+                          >
+                            12
+                          </td>
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium"
+                          >
+                            <button
+                              type="button"
+                              class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-ctp-maroon hover:text-ctp-maroon/60 disabled:pointer-events-none"
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        <!-- Additional table rows go here -->
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="py-1 px-4">
+                    <nav class="flex items-center space-x-1">
+                      <button
+                        type="button"
+                        class="p-2.5 min-w-[40px] inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-ctp-text hover:bg-ctp-surface1 disabled:opacity-50 disabled:pointer-events-none font-semibold"
+                      >
+                        <span aria-hidden="true">«</span>
+                        <span class="sr-only">Previous</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="min-w-[40px] flex justify-center items-center py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none text-ctp-text hover:bg-ctp-surface1 font-semibold"
+                        aria-current="page"
+                      >
+                        1
+                      </button>
+                      <button
+                        type="button"
+                        class="min-w-[40px] flex justify-center items-center py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none text-ctp-text hover:bg-ctp-surface1 font-semibold"
+                      >
+                        2
+                      </button>
+                      <button
+                        type="button"
+                        class="min-w-[40px] flex justify-center items-center py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none text-ctp-text hover:bg-ctp-surface1 font-semibold"
+                      >
+                        3
+                      </button>
+                      <button
+                        type="button"
+                        class="p-2.5 min-w-[40px] inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-ctp-text hover:bg-ctp-surface1 disabled:opacity-50 disabled:pointer-events-none font-semibold"
+                      >
+                        <span class="sr-only">Next</span>
+                        <span aria-hidden="true">»</span>
+                      </button>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Legend Indicator -->
+          <div
+            class="flex justify-center sm:justify-end items-center gap-x-4 mb-3 sm:mb-6"
+          >
+            <div class="inline-flex items-center">
+              <span
+                class="size-2.5 inline-block bg-blue-600 rounded-sm me-2"
+              ></span>
+              <span class="text-[13px] text-gray-600 dark:text-neutral-400">
+                Waitlist
+              </span>
+            </div>
+            <div class="inline-flex items-center">
+              <span
+                class="size-2.5 inline-block bg-purple-600 rounded-sm me-2"
+              ></span>
+              <span class="text-[13px] text-gray-600 dark:text-neutral-400">
+                Leaving
+              </span>
+            </div>
+          </div>
+          <!-- End Legend Indicator -->
+
+          <div
+            id="hs-multiple-area-charts"
+            class="bg-ctp-surface0 rounded-lg border border-ctp-surface1"
+          ></div>
+          <% } %>
+        </div>
+      </div>
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+  </body>
+  <script src="https://preline.co/assets/js/hs-apexcharts-helpers.js"></script>
+
+  <script>
+    window.addEventListener("load", () => {
+      // Apex Multiple Area Charts
+      (function () {
+        buildChart(
+          "#hs-multiple-area-charts",
+          (mode) => ({
+            chart: {
+              height: 300,
+              type: "area",
+              toolbar: {
+                show: false,
+              },
+              zoom: {
+                enabled: true,
+              },
+            },
+            series: [
+              {
+                name: "Waitlist",
+                data: [
+                  18000, 51000, 60000, 38000, 88000, 50000, 40000, 52000, 88000,
+                  80000, 60000, 70000,
+                ],
+              },
+              {
+                name: "Leaving",
+                data: [
+                  27000, 38000, 60000, 77000, 40000, 50000, 49000, 29000, 42000,
+                  27000, 42000, 50000,
+                ],
+              },
+            ],
+            legend: {
+              show: false,
+            },
+            dataLabels: {
+              enabled: false,
+            },
+            stroke: {
+              curve: "straight",
+              width: 2,
+            },
+            grid: {
+              strokeDashArray: 2,
+            },
+            fill: {
+              type: "gradient",
+              gradient: {
+                type: "vertical",
+                shadeIntensity: 1,
+                opacityFrom: 0.1,
+                opacityTo: 0.8,
+              },
+            },
+            xaxis: {
+              type: "category",
+              tickPlacement: "on",
+              categories: [
+                "25 January 2023",
+                "26 January 2023",
+                "27 January 2023",
+                "28 January 2023",
+                "29 January 2023",
+                "30 January 2023",
+                "31 January 2023",
+                "1 February 2023",
+                "2 February 2023",
+                "3 February 2023",
+                "4 February 2023",
+                "5 February 2023",
+              ],
+              axisBorder: {
+                show: false,
+              },
+              axisTicks: {
+                show: false,
+              },
+              crosshairs: {
+                stroke: {
+                  dashArray: 0,
+                },
+                dropShadow: {
+                  show: false,
+                },
+              },
+              tooltip: {
+                enabled: false,
+              },
+              labels: {
+                style: {
+                  colors: "#9ca3af",
+                  fontSize: "13px",
+                  fontFamily: "Cal Sans",
+                  fontWeight: 400,
+                },
+                formatter: (title) => {
+                  let t = title;
+
+                  if (t) {
+                    const newT = t.split(" ");
+                    t = `${newT[0]} ${newT[1].slice(0, 3)}`;
+                  }
+
+                  return t;
+                },
+              },
+            },
+            yaxis: {
+              labels: {
+                align: "left",
+                minWidth: 0,
+                maxWidth: 140,
+                style: {
+                  colors: "#9ca3af",
+                  fontSize: "13px",
+                  fontFamily: "Cal Sans",
+                  fontWeight: 400,
+                },
+                formatter: (value) =>
+                  value >= 1000 ? `${value / 1000}k` : value,
+              },
+            },
+            tooltip: {
+              x: {
+                format: "MMMM yyyy",
+              },
+              y: {
+                formatter: (value) =>
+                  `$${value >= 1000 ? `${value / 1000}k` : value}`,
+              },
+              custom: function (props) {
+                const { categories } = props.ctx.opts.xaxis;
+                const { dataPointIndex } = props;
+                const title = categories[dataPointIndex].split(" ");
+                const newTitle = `${title[0]} ${title[1]}`;
+
+                return buildTooltip(props, {
+                  title: newTitle,
+                  mode,
+                  hasTextLabel: true,
+                  wrapperExtClasses: "min-w-28",
+                  labelDivider: ":",
+                  labelExtClasses: "ms-2",
+                });
+              },
+            },
+            responsive: [
+              {
+                breakpoint: 568,
+                options: {
+                  chart: {
+                    height: 300,
+                  },
+                  labels: {
+                    style: {
+                      colors: "#9ca3af",
+                      fontSize: "11px",
+                      fontFamily: "CalSans",
+                      fontWeight: 400,
+                    },
+                    offsetX: -2,
+                    formatter: (title) => title.slice(0, 3),
+                  },
+                  yaxis: {
+                    labels: {
+                      align: "left",
+                      minWidth: 0,
+                      maxWidth: 140,
+                      style: {
+                        colors: "#9ca3af",
+                        fontSize: "11px",
+                        fontFamily: "Cal Sans",
+                        fontWeight: 400,
+                      },
+                      formatter: (value) =>
+                        value >= 1000 ? `${value / 1000}k` : value,
+                    },
+                  },
+                },
+              },
+            ],
+          }),
+          {
+            colors: ["#89b4fa", "#f38ba8"],
+            fill: {
+              gradient: {
+                stops: [0, 90, 100],
+              },
+            },
+            xaxis: {
+              labels: {
+                style: {
+                  colors: "#f5c2e7",
+                },
+              },
+            },
+            yaxis: {
+              labels: {
+                style: {
+                  colors: "#f5c2e7",
+                },
+              },
+            },
+            grid: {
+              borderColor: "#e5e7eb",
+            },
+          },
+          {
+            colors: ["#3b82f6", "#f5c2e7"],
+            fill: {
+              gradient: {
+                stops: [100, 90, 0],
+              },
+            },
+            xaxis: {
+              labels: {
+                style: {
+                  colors: "#f5c2e7",
+                },
+              },
+            },
+            yaxis: {
+              labels: {
+                style: {
+                  colors: "#f5c2e7",
+                },
+              },
+            },
+            grid: {
+              borderColor: "#404040",
+            },
+          }
+        );
+      })();
+    });
+  </script>
+  <script>
+    const searchInput = document.getElementById("hs-table-search");
+    const tableRows = document.querySelectorAll("#hs-table-body tr");
+
+    searchInput.addEventListener("input", function () {
+      const searchText = this.value.toLowerCase();
+
+      tableRows.forEach((row) => {
+        const nameColumn = row.querySelector("td:nth-child(2)");
+        if (nameColumn) {
+          const text = nameColumn.textContent.toLowerCase();
+          row.style.display = text.includes(searchText) ? "" : "none";
+        }
+      });
+    });
+
+    let currentPage = 1;
+    const studentsPerPage = 5; // Number of students to display per page
+
+    // Function to initialize the table with the first page of students
+    function initializeTable() {
+      updateTablePage(currentPage);
+    }
+
+    // Function to update the table to display students for the given page number
+    function updateTablePage(pageNumber) {
+      const students = getStudentsFromHTML(); // Fetch student data from HTML
+      const startIndex = (pageNumber - 1) * studentsPerPage;
+      const endIndex = startIndex + studentsPerPage;
+      const displayedStudents = students.slice(startIndex, endIndex);
+
+      // Update table UI with displayedStudents
+      // Example: Update the <tbody> content based on displayedStudents
+      // document.getElementById('hs-table-body').innerHTML = ...;
+    }
+
+    // Function to fetch student data from HTML
+    function getStudentsFromHTML() {
+      const tableRows = Array.from(
+        document.querySelectorAll("#hs-table-body tr")
+      );
+
+      const students = tableRows.map((row) => {
+        const name = row.querySelector("td:nth-child(2)").textContent.trim();
+        const grade = parseInt(
+          row.querySelector("td:nth-child(3)").textContent.trim()
+        );
+        const age = parseInt(
+          row.querySelector("td:nth-child(4)").textContent.trim()
+        );
+        console.log({ name, grade, age });
+        return { name, grade, age };
+      });
+
+      return students;
+    }
+
+    // Function to move to the next page of students
+    function goToNextPage() {
+      if (
+        currentPage < Math.ceil(getStudentsFromHTML().length / studentsPerPage)
+      ) {
+        currentPage++;
+        updateTablePage(currentPage);
+      }
+    }
+
+    // Function to move to the previous page of students
+    function goToPreviousPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        updateTablePage(currentPage);
+      }
+    }
+
+    // Function to move to a specific page number
+    function goToPage(pageNumber) {
+      if (
+        pageNumber >= 1 &&
+        pageNumber <= Math.ceil(getStudentsFromHTML().length / studentsPerPage)
+      ) {
+        currentPage = pageNumber;
+        updateTablePage(currentPage);
+      }
+    }
+
+    // Example usage:
+    initializeTable(); // Initialize table on page load
+    // You can then bind these functions to UI events (e.g., buttons) as needed
+  </script>
+</html>

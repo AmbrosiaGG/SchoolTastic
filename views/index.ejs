@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./components/header.ejs') %>
+</head>
+
+<body class="mocha bg-ctp-base backdrop-filter bg-no-repeat scroll-smooth backdrop-blur-md transform-gpu" id="bg">
+  <!-- Hero -->
+
+  <div class="relative z-10 backdrop-filter backdrop-blur-lg mb-[10rem]">
+    <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+      <div class="max-w-2xl text-center mx-auto">
+        <!-- Title -->
+        <div class="mt-5 max-w-2xl">
+          <h1
+            class="block font-calsans bg-gradient-to-r from-ctp-text to-ctp-text/65 bg-clip-text text-transparent text-4xl md:text-5xl lg:text-6xl">
+            <%= title %>
+          </h1>
+          <h1
+          class="font-calsans bg-gradient-to-r from-ctp-text to-ctp-text/65 bg-clip-text text-transparent text-4xl md:text-5xl lg:text-6xl text-center flex justify-center ">
+           Student Portal
+        </h1>
+
+        </div>
+        
+        <!-- End Title -->
+        <!-- Buttons -->
+        <div class="mt-8 gap-3 flex justify-center">
+          <a class="inline-flex justify-center group items-center gap-x-3 text-center transition-all hover:duration-150 text-white text-sm font-medium rounded-md py-3 px-4 border border-ctp-surface0/30 bg-ctp-surface1/30"
+            href="/login">
+            Login
+            <svg class="flex-shrink-0 size-4 transition ease-in-out group-hover:translate-x-2 group-focus:translate-x-2"
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </a>
+
+        </div>
+        <!-- End Buttons -->
+      </div>
+    </div>
+    <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 490" xmlns="http://www.w3.org/2000/svg"
+      class="transition duration-300 ease-in-out delay-150">
+      <defs>
+        <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+          <stop offset="5%" stop-color="#f5c2e7"></stop>
+          <stop offset="95%" stop-color="#f38ba8"></stop>
+        </linearGradient>
+      </defs>
+      <path
+        d="M 0,500 L 0,125 C 87.10047846889952,138.0909090909091 174.20095693779905,151.1818181818182 263,141 C 351.79904306220095,130.8181818181818 442.2966507177034,97.36363636363635 532,79 C 621.7033492822966,60.63636363636365 710.6124401913876,57.36363636363636 822,74 C 933.3875598086124,90.63636363636364 1067.2535885167463,127.18181818181819 1174,139 C 1280.7464114832537,150.8181818181818 1360.3732057416269,137.9090909090909 1440,125 L 1440,500 L 0,500 Z"
+        stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53"
+        class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+      <defs>
+        <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+          <stop offset="5%" stop-color="#f5c2e7"></stop>
+          <stop offset="95%" stop-color="#f38ba8"></stop>
+        </linearGradient>
+      </defs>
+      <path
+        d="M 0,500 L 0,291 C 68.63157894736838,271.066985645933 137.26315789473676,251.13397129186603 247,254 C 356.73684210526324,256.86602870813397 507.57894736842115,282.5311004784689 607,276 C 706.4210526315788,269.4688995215311 754.4210526315788,230.7416267942584 828,231 C 901.5789473684212,231.2583732057416 1000.7368421052631,270.5023923444976 1107,287 C 1213.2631578947369,303.4976076555024 1326.6315789473683,297.2488038277512 1440,291 L 1440,500 L 0,500 Z"
+        stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1"
+        class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
+    </svg>
+  </div>
+  <!-- End Hero -->
+</body>
+
+</html>
