@@ -44,16 +44,12 @@ Can work on local infrastructure to limit internet access during examinations!
  nano .env
  echo "Install Bun"
  curl -fsSl https://bun.sh/install | bash > /dev/null
-```
 
-Run bash
-```bash
+ # Run bash
  bash
  bun i
-```
 
-Test Bun
-```bash
+ # Test Bun
  bun .
  # Run SchoolTastic
  pm2 start --interpreter ~/.bun/bin/bun index.js --name "SchoolTastic" -- -color
@@ -70,6 +66,9 @@ Test Bun
  --env title=< Your School > \
  --name AmbrosiaSchoolTastic
 ```
+
+We also do provided cloud hosting powered
+by Dan Bot Hosting
 
 # Schools Powered By SchoolTastic
 * None :(
