@@ -38,6 +38,7 @@ Can work on local infrastructure to limit internet access during examinations!
 ## 🤖 Normal
 ```bash 
  git clone https://github.com/AmbrosiaGG/SchoolTastic
+ cd SchoolTastic
  mv .env.template .env
  echo "Write info to .ENV"
  sleep 2
