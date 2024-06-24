@@ -35,25 +35,13 @@ Can work on local infrastructure to limit internet access during examinations!
 
 # ☁️ Install
 
-## 🤖 Normal
-```bash 
- git clone https://github.com/AmbrosiaGG/SchoolTastic
- cd SchoolTastic
- mv .env.template .env
- echo "Write info to .ENV"
- sleep 2
- nano .env
- echo "Install Bun"
- curl -fsSl https://bun.sh/install | bash > /dev/null
-
- # Run bash
- bash
- bun i
-
- # Test Bun
- bun .
- # Run SchoolTastic
- pm2 start --interpreter ~/.bun/bin/bun index.js --name "SchoolTastic" -- -color
+## 🤖 Quick Setup (Recommended)
+```bash
+bash <(wget -qO- https://raw.githubusercontent.com/AmbrosiaGG/SchoolTastic/main/script/setup.sh)
+```
+or
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/AmbrosiaGG/SchoolTastic/main/script/setup.sh)
 ```
 
 ## 🐋 Docker
@@ -68,8 +56,17 @@ Can work on local infrastructure to limit internet access during examinations!
  --name AmbrosiaSchoolTastic
 ```
 
+## 🔧 Configurations (.env file)
+```
+atlas=(e.g., mongodb://admin:password@example.com:port/?authSource=admin)
+session=(string, it'll be encrypted and saved on initialAdminPassword.txt)
+port=(Webpage Port, e.g., 3000
+updates=(Auto Update, e.g., true/false)
+title=(Your Schoolname, e.g.,	Stanford University)
+```
+
 We also do provided cloud hosting powered
-by Dan Bot Hosting
+by DanBot Hosting
 
 # Schools Powered By SchoolTastic
 * None :(
