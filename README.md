@@ -56,9 +56,8 @@ curl -fsSL https://raw.githubusercontent.com/AmbrosiaGG/SchoolTastic/main/script
  --name AmbrosiaSchoolTastic
 ```
 
-## 🔧 Configurations
-```bash
-// .env file
+## 🔧 Configurations (.env file)
+```
 atlas=(e.g., mongodb://admin:password@example.com:port/?authSource=admin)
 session=(string, it'll be encrypted and saved on initialAdminPassword.txt)
 port=(Webpage Port, e.g., 3000
