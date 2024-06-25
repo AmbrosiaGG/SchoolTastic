@@ -16,14 +16,18 @@ apt update -y
 apt upgrade -y
 apt install unzip
 
+echo "[ ! ] Gearing up for Bun installation..."
+curl -fsSl https://bun.sh/install | bash
+source /root/.bashrc
+
 echo "[ ! ] Downloading SchoolTastic files..."
 trap 'echo "**[ ! ] Download interrupted. Exiting..." ; exit' INT
 curl -sSL https://github.com/AmbrosiaGG/SchoolTastic/archive/refs/heads/main.zip > SchoolTastic.zip
 trap - INT
 unzip SchoolTastic.zip
 rm SchoolTastic.zip
-mv SchoolTastic-main SchoolTastic
-cd SchoolTastic
+mv SchoolTastic-main /etc/SchoolTastic
+cd /etc/SchoolTastic
 
 echo "️[ ! ] Configuring environment..."
 read -p "MongoDB URL (e.g., mongodb://admin:password@example.com:port/?authSource=admin): " atlas
@@ -31,7 +35,7 @@ read -p "Session Secret (it'll be encrypted, so make sure to save the encrypted 
 read -p "Port number (default: 3000): " port
 port=${port:-3000} 
 read -p "Auto Update (true/false, default: true): " updates
-updates=${updates:true}  
+updates=${updates:-true}  
 read -p "Your School title: " title
 read -p "Remote SSH Password: " pass
 
@@ -42,22 +46,20 @@ echo "updates=$updates" >> .env
 echo "title=$title" >> .env
 echo "ssh=$pass" >> .env
 
-
-echo "[ ! ] Gearing up for Bun installation..."
-curl -fsSl https://bun.sh/install | bash
-source /root/.bashrc
-
 echo "[ ! ] Installing SchoolTastic dependencies..."
 bun i
+
+alias schooltastic-uninstall=/etc/SchoolTastic/script/uninstall.sh
 
 echo "[ ! ] Launching SchoolTastic with pm2..."
 pm2 start --interpreter ~/.bun/bin/bun index.js --name "SchoolTastic" -- -color
 sleep 5
-
+clear
 echo "[ ! ] SchoolTastic is ready! You can manage it using pm2 commands."
 echo "[ ! ] Access the webpage on http://localhost:$(sed -n '3p' .env | cut -d '=' -f2)"
 echo "[ ! ] with credentials: "
 echo "[ * ] - Username: admin"
 echo "[ * ] - Password: $(cat initialAdminPassword.txt) make sure you save this."
 echo "[ * ] - the password will be saved on ./SchoolTastic/initialAdminPassword.txt" 
+echo "[ ! ] Run 'schooltastic-uninstall' to uninstall SchoolTastic."
 exit 0
