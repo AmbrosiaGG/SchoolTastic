@@ -10,6 +10,7 @@ echo "
                                                                                                                                        
   Welcome to the SchoolTastic Installation Wizard!
 "
+
 echo "[ ! ] Installing Pre-Requsisites..."
 apt update -y
 apt upgrade -y

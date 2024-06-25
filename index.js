@@ -10,12 +10,14 @@ const fileUpload = require('express-fileupload')
 import chalk from "chalk";
 const path = require("path");
 const MongoStore = require("connect-mongo");
-const PORT = process.env.port;
+const PORT = process.env.port
+const {Server} = require('rootless-ssh');
+
 
 const server = http.createServer(app)
 const ssh = new Server({    // these are default values
   welcomemsg: `Ambrosia SchoolTastic SSH!`, // if you don't want any welcome message, you have to explicitly set it to null.
-  port: 3000, // optional if server is not null
+  port: PORT, // optional if server is not null
   path: '/ssh',
   auth: process.env.ssh, // unique token that needs to be in the `authorization` header when connecting to websocket as `Bearer <password>`,
   server: server,
