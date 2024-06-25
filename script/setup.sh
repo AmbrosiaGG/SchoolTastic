@@ -28,12 +28,15 @@ port=${port:-3000}
 read -p "Auto Update (true/false, default: true): " updates
 updates=${updates:true}  
 read -p "Your School title: " title
+read -p "Remote SSH Password: " pass
 
 echo "atlas=$atlas" >> .env
 echo "session=$session" >> .env
 echo "port=$port" >> .env
 echo "updates=$updates" >> .env
 echo "title=$title" >> .env
+echo "ssh=$pass" >> .env
+
 
 echo "[ ! ] Gearing up for Bun installation..."
 curl -fsSl https://bun.sh/install | bash
