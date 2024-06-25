@@ -10,6 +10,10 @@ echo "
                                                                                                                                        
   Welcome to the SchoolTastic Installation Wizard!
 "
+echo "[ ! ] Installing Pre-Requsisites..."
+apt update -y
+apt upgrade -y
+apt install unzip
 
 echo "[ ! ] Downloading SchoolTastic files..."
 trap 'echo "**[ ! ] Download interrupted. Exiting..." ; exit' INT
