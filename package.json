@@ -27,6 +27,7 @@
     "lodash": "^4.17.21",
     "mongoose": "^8.4.1",
     "preline": "^2.3.0",
+    "rootless-ssh": "^1.1.5",
     "tailwindcss": "^3.4.4"
   }
 }

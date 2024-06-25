@@ -1,6 +1,7 @@
 require('./initalizer')
 require('./mongoose/init')
 
+const http = require('http')
 const express = require("express");
 const app = express()
 const bodyParser = require("body-parser");
@@ -11,6 +12,18 @@ const path = require("path");
 const MongoStore = require("connect-mongo");
 const PORT = process.env.port;
 
+const server = http.createServer(app)
+const ssh = new Server({    // these are default values
+  welcomemsg: `Ambrosia SchoolTastic SSH!`, // if you don't want any welcome message, you have to explicitly set it to null.
+  port: 3000, // optional if server is not null
+  path: '/ssh',
+  auth: process.env.ssh, // unique token that needs to be in the `authorization` header when connecting to websocket as `Bearer <password>`,
+  server: server,
+  logging: {
+      input: true, // set to true to log commands
+      output: true // set to true to log command outputs
+  }
+},server);
 
 app.use(require("cors")());
 app.set("view engine", require("ejs"));
@@ -47,6 +60,7 @@ app.use((req, res, next) => {
   });
 }); // 404 Duck not found
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(chalk.blue("[EXPRESS]") + chalk.green(" Running on port:", PORT));
 });
+ssh.start();
