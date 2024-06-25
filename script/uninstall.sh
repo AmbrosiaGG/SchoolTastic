@@ -14,7 +14,7 @@ if [[ $confirmation =~ ^[Yy]$ ]]; then
   fi
 
   echo "[ ! ] Removing SchoolTastic directory..."
-  rm -rf /usr/bin/SchoolTastic
+  rm -rf /etc/SchoolTastic
 
   read -p "Do you also want to uninstall Bun? (y/N): " bun_uninstall
 
