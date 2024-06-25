@@ -22,7 +22,7 @@ cd SchoolTastic
 
 echo "️[ ! ] Configuring environment..."
 read -p "MongoDB URL (e.g., mongodb://admin:password@example.com:port/?authSource=admin): " atlas
-read -p "Admin Password (it'll be encrypted, so make sure to save the encrypted password): " session
+read -p "Session Secret (it'll be encrypted, so make sure to save the encrypted password): " session
 read -p "Port number (default: 3000): " port
 port=${port:-3000} 
 read -p "Auto Update (true/false, default: true): " updates
