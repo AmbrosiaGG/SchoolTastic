@@ -6,11 +6,11 @@
   <script src="/node_modules/preline/dist/preline.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
   <!--
    Charts
   -->
-  <link rel="stylesheet" href="/node_modules/apexcharts/dist/apexcharts.css">
+  <link rel="stylesheet" href="/node_modules/apexcharts/dist/apexcharts.css" />
   <script src="/node_modules/lodash/lodash.min.js"></script>
   <script src="/node_modules/apexcharts/dist/apexcharts.min.js"></script>
   <script src="https://preline.co/assets/js/hs-apexcharts-helpers.js"></script>
@@ -20,20 +20,19 @@
   -->
 
   <script>
-    const requiredKeys = ['d', 'u', 'c', 'k', 'e', 'e'];
+    const requiredKeys = ["d", "u", "c", "k", "e", "e"];
     let currentKeyIndex = 0;
 
-  document.addEventListener('keydown', function(event) {
+    document.addEventListener("keydown", function (event) {
       if (event.key === requiredKeys[currentKeyIndex]) {
         currentKeyIndex++;
 
         if (currentKeyIndex === requiredKeys.length) {
-           Swal.fire({
-              icon: "question",
-              title: "duckee",
-              text: "certified duckee moment",
-            });
-
+          Swal.fire({
+            icon: "question",
+            title: "duckee",
+            text: "certified duckee moment",
+          });
 
           currentKeyIndex = 0;
         }
@@ -41,8 +40,6 @@
         currentKeyIndex = 0;
       }
     });
-</script>
-
   </script>
   <script>
     /**
@@ -108,8 +105,7 @@
      */
     updateButton({ buttonEl: button, isDark: currentThemeSetting === "dark" });
     updateThemeOnHtmlEl({ theme: currentThemeSetting });
-    document.body.classList.add(currentThemeSetting)
-
+    document.body.classList.add(currentThemeSetting);
 
     /**
      * 4. Add an event listener to toggle the theme
@@ -119,14 +115,14 @@
       localStorage.setItem("theme", newTheme);
       updateButton({ buttonEl: button, isDark: newTheme === "dark" });
       updateThemeOnHtmlEl({ theme: newTheme });
-      
+
       if (currentThemeSetting == "dark") {
-        changeto = "mocha"
-        document.body.classList.replace("frappe", "mocha")
+        changeto = "mocha";
+        document.body.classList.replace("frappe", "mocha");
       }
       if (currentThemeSetting == "light") {
-        changeto = "frappe"
-        document.body.classList.replace("mocha", "frappe")
+        changeto = "frappe";
+        document.body.classList.replace("mocha", "frappe");
       }
     });
   </script>

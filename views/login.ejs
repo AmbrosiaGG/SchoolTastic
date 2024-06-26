@@ -150,22 +150,6 @@
     </body>
   </html>
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const icon = urlParams.get("icon");
-    const description = urlParams.get("description");
-    const title = urlParams.get("title");
-    console.log({
-      icon: icon,
-      description: description,
-      title: title,
-    }); // Debugging
-    if (title) {
-      Swal.fire({
-        icon: icon,
-        title: title,
-        text: description,
-      });
-    }
     const HSThemeAppearance = {
       init() {
         const defaultTheme = "default";

@@ -52,6 +52,9 @@ app.use(bodyParser.json());
 app.use("/api", require("./routers/api"));
 app.use("", require("./routers/index")); // this is for / Route BTW
 app.use('/dashboard', require('./routers/dashboard'))
+app.use('/teachers', require('./routers/teachers'))
+app.use('/students', require('./routers/students'))
+app.use('/class', require('./routers/class'))
 app.use("/assets", express.static(path.join(__dirname, "assets")));
 // app.use("/files", express.static(path.join(__dirname, "files"))); COMMENT HER OUTT
 app.use("/node_modules", express.static(path.join(__dirname, "node_modules"))); // Major security ISSUE

@@ -233,29 +233,42 @@
             >
           </div>
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
-            <a class="inline-flex items-center gap-x-2" href="/teachers/exam"
+            <a class="inline-flex items-center gap-x-2" href="/teachers/exams"
               >Examination</a
             >
           </div>
 
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
-            <a class="inline-flex items-center gap-x-2" href="/teachers/ducky/tests"
+            <a
+              class="inline-flex items-center gap-x-2"
+              href="/teachers/tests"
               >Tests</a
             >
           </div>
 
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
-            <a class="inline-flex items-center gap-x-2" href="/teachers/ducky/marks"
-              >Marking</a
+            <a
+              class="inline-flex items-center gap-x-2"
+              href="/teachers/marks"
+              >Teachers Markings</a
             >
           </div>
 
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
-            <a class="inline-flex items-center gap-x-2" href="/class/ducky/members"
-              >Class Members</a
+            <a
+              class="inline-flex items-center gap-x-2"
+              href="/class/teacher"
+              >Classes</a
             >
           </div>
 
+          <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
+            <a
+              class="inline-flex items-center gap-x-2"
+              href="/publish"
+              >Publish</a
+            >
+          </div>
           <% } else if (role="teacher") { %>
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
             <a class="inline-flex items-center gap-x-2" href="/teachers/exam"
@@ -281,11 +294,11 @@
             >
           </div>
           <% } else { %>
-            <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
-              <a class="inline-flex items-center gap-x-2" href="/students/marks"
-                >Marks</a
-              >
-            </div>  
+          <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
+            <a class="inline-flex items-center gap-x-2" href="/students/marks"
+              >Marks</a
+            >
+          </div>
           <% } %>
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last:pe-0">
             <a
@@ -498,7 +511,7 @@
                 <div
                   class="border rounded-lg divide-y bg-ctp-surface0 border-ctp-surface1 divide-ctp-surface1"
                 >
-                  <div class="py-3 px-4 flex items-center">
+                  <div class="py-3 px-4 flex items-center justify-between">
                     <h1 class="font-calsans text-ctp-pink text-2xl mr-3 mt-1">
                       Students
                     </h1>
@@ -797,25 +810,69 @@
                     </table>
                   </div>
                   <div class="py-1 px-4">
-              <!-- Pagination -->
-<nav class="flex items-center -space-x-px">
-  <button type="button" class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-lg last:rounded-e-lg border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
-    <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="m15 18-6-6 6-6"></path>
-    </svg>
-    <span class="hidden sm:block">Previous</span>
-  </button>
-  <button type="button" class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-gray-200 text-gray-800 border border-gray-200 py-2 px-3 text-sm first:rounded-s-lg last:rounded-e-lg focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-600 dark:border-neutral-700 dark:text-white dark:focus:bg-neutral-500" aria-current="page">1</button>
-  <button type="button" class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm first:rounded-s-lg last:rounded-e-lg focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">2</button>
-  <button type="button" class="min-h-[38px] min-w-[38px] flex justify-center items-center border border-gray-200 text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm first:rounded-s-lg last:rounded-e-lg focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">3</button>
-  <button type="button" class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-lg last:rounded-e-lg border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
-    <span class="hidden sm:block">Next</span>
-    <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="m9 18 6-6-6-6"></path>
-    </svg>
-  </button>
-</nav>
-<!-- End Pagination -->
+                    <!-- Pagination -->
+                    <nav class="flex items-center -space-x-px">
+                      <button
+                        type="button"
+                        class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm first:rounded-s-lg last:rounded-e-lg border focus:outline-none disabled:opacity-50 disabled:pointer-events-none bg-ctp-surface1 border-ctp-surface2 text-ctp-text hover:bg-ctp-surface1/55 focus:bg-ctp-surface1/55 transition"
+                      >
+                        <svg
+                          class="flex-shrink-0 size-3.5"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="m15 18-6-6 6-6"></path>
+                        </svg>
+                        <span class="hidden sm:block">Previous</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="min-h-[38px] min-w-[38px] flex justify-center items-center border py-2 px-3 text-sm first:rounded-s-lg last:rounded-e-lg focus:outline-none  disabled:opacity-50 disabled:pointer-events-none bg-ctp-surface1 border-ctp-surface2 text-ctp-text hover:bg-ctp-surface1/55 focus:bg-ctp-surface1/55 transition"
+                        aria-current="page"
+                      >
+                        1
+                      </button>
+                      <button
+                        type="button"
+                        class="min-h-[38px] min-w-[38px] flex justify-center items-center border py-2 px-3 text-sm first:rounded-s-lg last:rounded-e-lg focus:outline-none  disabled:opacity-50 disabled:pointer-events-none bg-ctp-surface1 border-ctp-surface2 text-ctp-text hover:bg-ctp-surface1/55 focus:bg-ctp-surface1/55 transition"
+                      >
+                        2
+                      </button>
+                      <button
+                        type="button"
+                        class="min-h-[38px] min-w-[38px] flex justify-center items-center border py-2 px-3 text-sm first:rounded-s-lg last:rounded-e-lg focus:outline-none  disabled:opacity-50 disabled:pointer-events-none bg-ctp-surface1 border-ctp-surface2 text-ctp-text hover:bg-ctp-surface1/55 focus:bg-ctp-surface1/55 transition"
+                      >
+                        3
+                      </button>
+                      <button
+                        type="button"
+                        class="min-h-[38px] min-w-[38px] flex justify-center items-center border py-2 px-3 text-sm first:rounded-s-lg last:rounded-e-lg focus:outline-none  disabled:opacity-50 disabled:pointer-events-none bg-ctp-surface1 border-ctp-surface2 text-ctp-text hover:bg-ctp-surface1/55 focus:bg-ctp-surface1/55 transition"
+                      >
+                        <span class="hidden sm:block">Next</span>
+                        <svg
+                          class="flex-shrink-0 size-3.5"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                      </button>
+                    </nav>
+                    <!-- End Pagination -->
                   </div>
                 </div>
               </div>
@@ -852,6 +909,7 @@
           <% } %>
         </div>
       </div>
+      <%- include('../components/footer.ejs')%>
     </main>
     <!-- ========== END MAIN CONTENT ========== -->
   </body>

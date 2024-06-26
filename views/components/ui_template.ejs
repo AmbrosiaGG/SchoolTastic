@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include('../components/header.ejs') %>
+    <%- include('../../components/header.ejs') %>
   </head>
 
   <body
@@ -233,7 +233,7 @@
             >
           </div>
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
-            <a class="inline-flex items-center gap-x-2" href="/teachers/exam"
+            <a class="inline-flex items-center gap-x-2" href="/teachers/exams"
               >Examination</a
             >
           </div>
@@ -241,7 +241,7 @@
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
             <a
               class="inline-flex items-center gap-x-2"
-              href="/teachers/ducky/tests"
+              href="/teachers/tests"
               >Tests</a
             >
           </div>
@@ -249,19 +249,26 @@
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
             <a
               class="inline-flex items-center gap-x-2"
-              href="/teachers/ducky/marks"
-              >Marking</a
+              href="/teachers/marks"
+              >Teachers Markings</a
             >
           </div>
 
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
             <a
               class="inline-flex items-center gap-x-2"
-              href="/class/ducky/members"
-              >Class Members</a
+              href="/class/teacher"
+              >Classes</a
             >
           </div>
 
+          <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
+            <a
+              class="inline-flex items-center gap-x-2"
+              href="/publish"
+              >Publish</a
+            >
+          </div>
           <% } else if (role="teacher") { %>
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
             <a class="inline-flex items-center gap-x-2" href="/teachers/exam"
@@ -311,151 +318,11 @@
 
       <div class="max-w-7xl min-h-[75rem] mx-auto py-10 px-4 sm:px-6 lg:px-8">
         <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
-          <% if (role == "admin") { %>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            <!-- Card -->
-            <div
-              class="flex flex-col border shadow-sm rounded-xl bg-ctp-surface0 border-ctp-surface1"
-            >
-              <div class="p-4 md:p-5">
-                <div class="flex items-center gap-x-2">
-                  <p class="text-xs uppercase tracking-wide text-ctp-subtext0">
-                    Students
-                  </p>
-                  <div class="hs-tooltip">
-                    <div class="hs-tooltip-toggle">
-                      <svg
-                        class="flex-shrink-0 size-4 text-ctp-subtext1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                        <path d="M12 17h.01" />
-                      </svg>
-                      <span
-                        class="hide hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:show opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700"
-                        role="tooltip"
-                      >
-                        Number of Students
-                      </span>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="mt-1 flex items-center gap-x-2">
-                  <h3 class="text-xl sm:text-2xl font-medium text-ctp-text">
-                    5
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
-      <!-- End Main Content Area -->
+      <%- include('../../components/footer.ejs') %>
     </main>
     <!-- ========== END MAIN CONTENT ========== -->
-
-    <!-- Scripts -->
-    <script>
-      const searchInput = document.getElementById("hs-table-search");
-      const tableRows = document.querySelectorAll("#hs-table-body tr");
-
-      searchInput.addEventListener("input", function () {
-        const searchText = this.value.toLowerCase();
-
-        tableRows.forEach((row) => {
-          const nameColumn = row.querySelector("td:nth-child(2)");
-          if (nameColumn) {
-            const text = nameColumn.textContent.toLowerCase();
-            row.style.display = text.includes(searchText) ? "" : "none";
-          }
-        });
-      });
-
-      let currentPage = 1;
-      const studentsPerPage = 5; // Number of students to display per page
-
-      // Function to initialize the table with the first page of students
-      function initializeTable() {
-        updateTablePage(currentPage);
-      }
-
-      // Function to update the table to display students for the given page number
-      function updateTablePage(pageNumber) {
-        const students = getStudentsFromHTML(); // Fetch student data from HTML
-        const startIndex = (pageNumber - 1) * studentsPerPage;
-        const endIndex = startIndex + studentsPerPage;
-        const displayedStudents = students.slice(startIndex, endIndex);
-
-        // Update table UI with displayedStudents
-        // Example: Update the <tbody> content based on displayedStudents
-        // document.getElementById('hs-table-body').innerHTML = ...;
-      }
-
-      // Function to fetch student data from HTML
-      function getStudentsFromHTML() {
-        const tableRows = Array.from(
-          document.querySelectorAll("#hs-table-body tr")
-        );
-
-        const students = tableRows.map((row) => {
-          const name = row.querySelector("td:nth-child(2)").textContent.trim();
-          const grade = parseInt(
-            row.querySelector("td:nth-child(3)").textContent.trim()
-          );
-          const age = parseInt(
-            row.querySelector("td:nth-child(4)").textContent.trim()
-          );
-          console.log({ name, grade, age });
-          return { name, grade, age };
-        });
-
-        return students;
-      }
-
-      // Function to move to the next page of students
-      function goToNextPage() {
-        if (
-          currentPage <
-          Math.ceil(getStudentsFromHTML().length / studentsPerPage)
-        ) {
-          currentPage++;
-          updateTablePage(currentPage);
-        }
-      }
-
-      // Function to move to the previous page of students
-      function goToPreviousPage() {
-        if (currentPage > 1) {
-          currentPage--;
-          updateTablePage(currentPage);
-        }
-      }
-
-      // Function to move to a specific page number
-      function goToPage(pageNumber) {
-        if (
-          pageNumber >= 1 &&
-          pageNumber <=
-            Math.ceil(getStudentsFromHTML().length / studentsPerPage)
-        ) {
-          currentPage = pageNumber;
-          updateTablePage(currentPage);
-        }
-      }
-
-      // Example usage:
-      initializeTable(); // Initialize table on page load
-      // You can then bind these functions to UI events (e.g., buttons) as needed
-    </script>
   </body>
 </html>
