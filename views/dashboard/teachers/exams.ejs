@@ -220,9 +220,7 @@
           class="max-w-7xl snap-x w-full flex items-center overflow-x-auto px-4 sm:px-6 lg:px-8 pb-4 md:pb-0 mx-auto [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300"
         >
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
-            <a
-              class="inline-flex items-center gap-x-2 font-bold"
-              href="/dashboard"
+            <a class="inline-flex items-center gap-x-2" href="/dashboard"
               >Dashboard</a
             >
           </div>
@@ -233,39 +231,33 @@
             >
           </div>
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
-            <a class="inline-flex items-center gap-x-2" href="/teachers/exams"
+            <a
+              class="inline-flex items-center gap-x-2 font-bold"
+              href="/teachers/exams"
               >Examination</a
             >
           </div>
 
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
-            <a
-              class="inline-flex items-center gap-x-2"
-              href="/teachers/tests"
+            <a class="inline-flex items-center gap-x-2" href="/teachers/tests"
               >Tests</a
             >
           </div>
 
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
-            <a
-              class="inline-flex items-center gap-x-2"
-              href="/teachers/marks"
+            <a class="inline-flex items-center gap-x-2" href="/teachers/marks"
               >Teachers Markings</a
             >
           </div>
 
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
-            <a
-              class="inline-flex items-center gap-x-2"
-              href="/class/teacher"
+            <a class="inline-flex items-center gap-x-2" href="/class/teacher"
               >Classes</a
             >
           </div>
 
           <div class="snap-center shrink-0 pe-5 sm:pe-8 sm:last-pe-0">
-            <a
-              class="inline-flex items-center gap-x-2"
-              href="/publish"
+            <a class="inline-flex items-center gap-x-2" href="/publish"
               >Publish</a
             >
           </div>
@@ -316,9 +308,216 @@
       </nav>
       <!-- End Nav -->
 
-      <div class="max-w-7xl min-h-[75rem] mx-auto py-10 px-4 sm:px-6 lg:px-8">
+      <div class="w-full mx-auto py-10 px-4 sm:px-6 lg:px-8">
         <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
+          <div class="flex justify-between items-center">
+            <h1 class="text-4xl font-calsans text-ctp-text">Exams</h1>
+            <select
+              class="cursor-pointer py-3 px-4 pe-9 block w-[45%] border-ctp-surface1 rounded-lg text-sm focus:border-ctp-pink focus:ring-ctp-pink disabled:opacity-50 disabled:pointer-events-none bg-ctp-surface0 text-ctp-text placeholder-ctp-subtext0"
+            >
+              <option class="p-2" selected="">Select A Teacher</option>
+              <option>Tr. Ducky</option>
+              <option>Tr. 2</option>
+              <option>Tr. 3</option>
+            </select>
+          </div>
+          <div class="hs-accordion-group">
+            <div
+              class="hs-accordion mb-1.5 bg-ctp-surface0 border border-transparent rounded-xl"
+              id="hs-active-bordered-heading-one"
+            >
+              <button
+                class="hs-accordion-toggle hs-accordion-active:text-ctp-pink inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-ctp-text py-4 px-5 hover:text-ctp-text/65 disabled:opacity-50 disabled:pointer-events-none"
+                aria-controls="hs-basic-active-bordered-collapse-one"
+              >
+                Grade 1
+                <svg
+                  class="hs-accordion-active:hidden block size-3.5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5v14"></path>
+                </svg>
+                <svg
+                  class="hs-accordion-active:block hidden size-3.5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14"></path>
+                </svg>
+              </button>
+              <div
+                id="hs-basic-active-bordered-collapse-one"
+                class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                aria-labelledby="hs-active-bordered-heading-one"
+              >
+                <div class="pb-4 px-5">
+                  <div>
+                    <button
+                      class="bg-ctp-surface1 p-2 rounded-lg border-ctp-surface2 border"
+                    >
+                      <a class="text-ctp-subtext1 text-sm font-calsans">
+                        Class #1: Science
+                      </a>
+                    </button>
 
+                    <button
+                      class="bg-ctp-surface1 p-2 rounded-lg border-ctp-surface2 border"
+                    >
+                      <a class="text-ctp-subtext1 text-sm font-calsans">
+                        Class #2: Science
+                      </a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="hs-accordion mb-1.5 bg-ctp-surface0 border border-transparent rounded-xl"
+              id="hs-active-bordered-heading-one"
+            >
+              <button
+                class="hs-accordion-toggle hs-accordion-active:text-ctp-pink inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-ctp-text py-4 px-5 hover:text-ctp-text/65 disabled:opacity-50 disabled:pointer-events-none"
+                aria-controls="hs-basic-active-bordered-collapse-one"
+              >
+                Grade 2
+                <svg
+                  class="hs-accordion-active:hidden block size-3.5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5v14"></path>
+                </svg>
+                <svg
+                  class="hs-accordion-active:block hidden size-3.5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14"></path>
+                </svg>
+              </button>
+              <div
+                id="hs-basic-active-bordered-collapse-one"
+                class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                aria-labelledby="hs-active-bordered-heading-one"
+              >
+                <div class="pb-4 px-5">
+                  <div>
+                    <button
+                      class="bg-ctp-surface1 p-2 rounded-lg border-ctp-surface2 border"
+                    >
+                      <a class="text-ctp-subtext1 text-sm font-calsans">
+                        Class #1: Science
+                      </a>
+                    </button>
+
+                    <button
+                      class="bg-ctp-surface1 p-2 rounded-lg border-ctp-surface2 border"
+                    >
+                      <a class="text-ctp-subtext1 text-sm font-calsans">
+                        Class #2: Science
+                      </a>
+                    </button>
+                  </div>                </div>
+              </div>
+            </div>
+
+            <div
+              class="hs-accordion bg-ctp-surface0 border border-transparent rounded-xl"
+              id="hs-active-bordered-heading-one"
+            >
+              <button
+                class="hs-accordion-toggle hs-accordion-active:text-ctp-pink inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-ctp-text py-4 px-5 hover:text-ctp-text/65 disabled:opacity-50 disabled:pointer-events-none"
+                aria-controls="hs-basic-active-bordered-collapse-one"
+              >
+                Grade 3
+                <svg
+                  class="hs-accordion-active:hidden block size-3.5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5v14"></path>
+                </svg>
+                <svg
+                  class="hs-accordion-active:block hidden size-3.5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14"></path>
+                </svg>
+              </button>
+              <div
+                id="hs-basic-active-bordered-collapse-one"
+                class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                aria-labelledby="hs-active-bordered-heading-one"
+              >
+                <div class="pb-4 px-5">
+                  <div>
+                    <button
+                      class="bg-ctp-surface1 p-2 rounded-lg border-ctp-surface2 border"
+                    >
+                      <a class="text-ctp-subtext1 text-sm font-calsans">
+                        Class #1: Science
+                      </a>
+                    </button>
+
+                    <button
+                      class="bg-ctp-surface1 p-2 rounded-lg border-ctp-surface2 border"
+                    >
+                      <a class="text-ctp-subtext1 text-sm font-calsans">
+                        Class #2: Science
+                      </a>
+                    </button>
+                  </div>                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <%- include('../../components/footer.ejs') %>
