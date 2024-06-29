@@ -1,5 +1,5 @@
 # 📖 Ambrosia SchoolTastic! 📖
-for the students by the students  
+for the students by the students   |   CodeName: Destiny
 
 Ambrosia SchoolTastic is for schools which do online exams or tests or assesments,
 features a Beautifully crafted UI and safety for the administrators, and teachers.

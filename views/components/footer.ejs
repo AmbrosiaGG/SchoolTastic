@@ -1,16 +1,23 @@
 <!-- ========== FOOTER ========== -->
 <footer
-  class="mt-auto w-full bg-ctp-surface0 border border-ctp-surface1 max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto"
->
+  class="mt-auto w-full bg-ctp-surface0 border border-ctp-surface1 max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
   <!-- Grid -->
   <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-10">
     <div class="col-span-full hidden lg:col-span-1 lg:block">
-      <a
-        class="flex-none text-xl font-semibold text-ctp-pink font-calsans hover:scale-150 transition"
-        href="#"
-        aria-label="Brand"
-        >SchoolTastic</a
-      >
+      <label class="swap  swap-flip">
+        <!-- this hidden checkbox controls the state -->
+        <input type="checkbox" />
+
+        <!-- volume on icon -->
+        <div class="flex-none text-xl font-semibold text-ctp-pink font-calsans swap-off" aria-label="Brand">
+          <%=title%>
+        </div>
+
+        <!-- volume off icon -->
+        <div class="flex-none text-xl font-semibold text-ctp-pink font-calsans swap-on"
+          aria-label="Brand">SchoolTastics</div>
+      </label>
+
       <p class="mt-3 text-xs sm:text-sm text-ctp-subtext0">
         Version 0.0.1 <span class="font-bold">Alpha</span>
       </p>
@@ -22,32 +29,20 @@
 
       <div class="mt-3 grid space-y-3 text-sm">
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://edu.ambrosia.gg/managed"
-            >Managed</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://edu.ambrosia.gg/managed">Managed</a>
         </p>
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://edu.ambrosia.gg/changes"
-            >Changelog</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://edu.ambrosia.gg/changes">Changelog</a>
         </p>
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://edu.ambrosia.gg/docs"
-            >Docs</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://edu.ambrosia.gg/docs">Docs</a>
         </p>
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://github.com/AmbrosiaGG/SchoolTastic"
-            >Download</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://github.com/AmbrosiaGG/SchoolTastic">Download</a>
         </p>
       </div>
     </div>
@@ -58,25 +53,16 @@
 
       <div class="mt-3 grid space-y-3 text-sm">
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://ambrosia.gg/about"
-            >About us</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://ambrosia.gg/about">About us</a>
         </p>
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://edu.ambrosia.gg/blog"
-            >Blog</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://edu.ambrosia.gg/blog">Blog</a>
         </p>
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://ambrosia.gg/careers"
-            >Careers</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://ambrosia.gg/careers">Careers</a>
           <span class="inline text-ctp-blue">— We're hiring</span>
         </p>
       </div>
@@ -88,32 +74,20 @@
 
       <div class="mt-3 grid space-y-3 text-sm">
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://github.com/AmbrosiaGG"
-            >Community</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://github.com/AmbrosiaGG">Community</a>
         </p>
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="#"
-            >Help & Support</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition" href="#">Help &
+            Support</a>
         </p>
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="?title=Whats%20New&icon=info&description=theres%20a%20man"
-            >What's New</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="?title=Whats%20New&icon=info&description=theres%20a%20man">What's New</a>
         </p>
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://ambrosia.gg/schools/status"
-            >Status</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://ambrosia.gg/schools/status">Status</a>
         </p>
       </div>
     </div>
@@ -124,25 +98,16 @@
 
       <div class="mt-3 grid space-y-3 text-sm">
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://edu.ambrosia.gg/docs"
-            >API</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://edu.ambrosia.gg/docs">API</a>
         </p>
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://edu.ambrosia.gg/status"
-            >Status</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://edu.ambrosia.gg/status">Status</a>
         </p>
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://github.com/AmbrosiaGG/"
-            >GitHub</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://github.com/AmbrosiaGG/">GitHub</a>
         </p>
       </div>
 
@@ -152,25 +117,16 @@
 
       <div class="mt-3 grid space-y-3 text-sm">
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://ambrosia.gg/industries/deployment"
-            >Deployment</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://ambrosia.gg/industries/deployment">Deployment</a>
         </p>
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition truncate"
-            href="https://ambrosia.gg/industries/education"
-            >Education<span class="inline text-blue-600">— New</span></a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition truncate"
+            href="https://ambrosia.gg/industries/education">Education<span class="inline text-blue-600">— New</span></a>
         </p>
         <p>
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://ambrosia.gg/industries/dev"
-            >Development</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://ambrosia.gg/industries/dev">Development</a>
         </p>
       </div>
     </div>
@@ -182,22 +138,15 @@
     <div class="sm:flex sm:justify-between sm:items-center">
       <div class="flex items-center gap-x-3">
         <div class="space-x-4 text-sm ms-4">
-          <a
-            class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
-            href="https://ambrosia.gg/"
-            >Status</a
-          >
+          <a class="inline-flex gap-x-2 text-ctp-subtext0 hover:text-ctp-subtext0/65 transition"
+            href="https://ambrosia.gg/">Status</a>
         </div>
       </div>
 
       <div class="flex justify-between items-center">
         <div class="mt-3 sm:hidden">
-          <a
-            class="flex-none text-xl font-semibold text-ctp-pink font-calsans"
-            href="#"
-            aria-label="Brand"
-            >SchoolTastic</a
-          >
+          <a class="flex-none text-xl font-semibold text-ctp-pink font-calsans" href="#"
+            aria-label="Brand">SchoolTastic</a>
           <p class="mt-3 text-xs sm:text-sm text-ctp-subtext0">
             Version 0.0.1 Alpha
           </p>

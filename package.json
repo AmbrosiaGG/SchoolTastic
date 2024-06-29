@@ -4,7 +4,8 @@
   "module": "index.js",
   "type": "module",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "daisyui": "^4.12.10"
   },
   "scripts": {
     "dev:css": "tailwindcss -i ./assets/global.css -o ./assets/tailwind.css --watch "
