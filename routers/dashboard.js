@@ -21,4 +21,38 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/tests", async (req, res) => {
+  if (!req.session.username) {
+    console.log(req.session.name)
+    res.redirect('/login?description=Not%20Logged%20In&title=Error&Icon=error ')
+  } else {
+    res.render("../views/errors/tests.ejs", {
+      title: process.env.title,
+      req: req,
+      res: res,
+      // 6/24/2024 8:48AM | I should find a Better way to do this
+      role: req.session.role,
+      name: req.session.username,
+      pass: req.session.not_listd,
+    });
+  }
+});
+
+router.get("/marks", async (req, res) => {
+  if (!req.session.username) {
+    console.log(req.session.name)
+    res.redirect('/login?description=Not%20Logged%20In&title=Error&Icon=error ')
+  } else {
+    res.render("../views/errors/marks.ejs", {
+      title: process.env.title,
+      req: req,
+      res: res,
+      // 6/24/2024 8:48AM | I should find a Better way to do this
+      role: req.session.role,
+      name: req.session.username,
+      pass: req.session.not_listd,
+    });
+  }
+});
+
 module.exports = router;
