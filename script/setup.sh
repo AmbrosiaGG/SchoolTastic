@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 clear
 echo "
@@ -48,18 +48,18 @@ echo "ssh=$pass" >> .env
 
 echo "[ ! ] Installing SchoolTastic dependencies..."
 bun i
-
-alias schooltastic-uninstall=/etc/SchoolTastic/script/uninstall.sh
+chmod +x "/etc/SchoolTastic/script/uninstall.sh"
+echo "alias schooltastic-uninstall='/etc/SchoolTastic/script/uninstall.sh'" >> ~/.bashrc
 
 echo "[ ! ] Launching SchoolTastic with pm2..."
 pm2 start --interpreter ~/.bun/bin/bun index.js --name "SchoolTastic" -- -color
 sleep 5
-clear
 echo "[ ! ] SchoolTastic is ready! You can manage it using pm2 commands."
 echo "[ ! ] Access the webpage on http://localhost:$(sed -n '3p' .env | cut -d '=' -f2)"
 echo "[ ! ] with credentials: "
 echo "[ * ] - Username: admin"
 echo "[ * ] - Password: $(cat initialAdminPassword.txt) make sure you save this."
 echo "[ * ] - the password will be saved on ./SchoolTastic/initialAdminPassword.txt" 
-echo "[ ! ] Run 'schooltastic-uninstall' to uninstall SchoolTastic."
+echo "[ ! ] - Run 'schooltastic-uninstall' to uninstall SchoolTastic." #but the sessions need to be restarted
+bash
 exit 0
